@@ -23,4 +23,8 @@ class Character
     end
   end
 
+  def deal_damage(monster, hp)
+    monster.damage hp
+  end
+
 end

@@ -69,6 +69,14 @@ describe 'Character' do
     expect(@character.alive?).to be(false)
   end
 
+  it 'should deal damage' do
+    monster = Character.new
+
+    @character.deal_damage(monster, MAX_HEALTH)
+
+    expect(monster.alive?).to be(false)
+  end
+
 
 
 end
