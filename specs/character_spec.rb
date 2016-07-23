@@ -19,4 +19,10 @@ describe 'Character' do
     expect(@character.alive?).to be(true)
   end
 
+  it 'should take damage' do
+    @character.damage(10)
+    expect(@character.health).to eq(990)
+  end
+
+
 end

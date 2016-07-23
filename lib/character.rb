@@ -8,4 +8,8 @@ alias_method :alive?, :alive
     @alive = true
   end
 
+def damage(hp)
+  @health -= hp
+end
+
 end
