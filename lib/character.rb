@@ -18,7 +18,9 @@ class Character
   end
 
   def heal(hp)
-    @health += hp unless !alive?
+    if alive?
+      @health = [@health + hp, MAX_HEALTH].min
+    end
   end
 
 end

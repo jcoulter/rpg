@@ -49,6 +49,16 @@ describe 'Character' do
     expect(@character.health).to eq(MAX_HEALTH)
   end
 
+  it 'should prevent healing beyond max_health' do
+    hp = 10
+    @character.damage hp
+    expect(@character.health).to eq(MAX_HEALTH - hp)
+
+    @character.heal(hp * 2)
+
+    expect(@character.health).to eq(MAX_HEALTH)
+  end
+
 
   it 'should not heal when dead' do
     @character.damage MAX_HEALTH
