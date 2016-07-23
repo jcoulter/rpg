@@ -1,6 +1,5 @@
 class Character
-attr_reader :health
-attr_reader :level
+attr_reader :health, :level
 
   def initialize
     @health = 1000

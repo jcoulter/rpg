@@ -3,12 +3,16 @@ require_relative '../lib/character'
 
 describe 'Character' do
 
+  before(:each) do
+    @character = Character.new
+  end
+
   it 'should initialize health' do
-    expect(Character.new.health).to eq(1000)
+    expect(@character.health).to eq(1000)
   end
 
   it 'should initialize level' do
-    expect(Character.new.level).to eq(1)
+    expect(@character.level).to eq(1)
   end
 
 end
