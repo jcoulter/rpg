@@ -15,4 +15,8 @@ describe 'Character' do
     expect(@character.level).to eq(1)
   end
 
+  it 'should be alive' do
+    expect(@character.alive?).to be(true)
+  end
+
 end
