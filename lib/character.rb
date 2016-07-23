@@ -17,4 +17,8 @@ class Character
     end
   end
 
+  def heal(hp)
+    @health += hp
+  end
+
 end

@@ -39,4 +39,16 @@ describe 'Character' do
   end
 
 
+  it 'should heal' do
+    hp = 10
+    @character.damage hp
+    expect(@character.health).to eq(MAX_HEALTH - hp)
+
+    @character.heal hp
+
+    expect(@character.health).to eq(MAX_HEALTH)
+  end
+
+
+
 end
