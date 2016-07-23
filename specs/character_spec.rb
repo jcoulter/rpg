@@ -32,5 +32,11 @@ describe 'Character' do
     expect(@character.alive?).to be(false)
   end
 
+  it 'should not allow negative health' do
+    @character.damage(MAX_HEALTH + 3)
+    expect(@character.health).to eq(0)
+    expect(@character.alive?).to be(false)
+  end
+
 
 end

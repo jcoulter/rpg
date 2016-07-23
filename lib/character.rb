@@ -11,7 +11,7 @@ class Character
   end
 
   def damage(hp)
-    @health -= hp
+    @health = [@health - hp, 0].max
     if @health == 0
       @alive = false
     end
