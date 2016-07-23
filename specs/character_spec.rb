@@ -50,5 +50,15 @@ describe 'Character' do
   end
 
 
+  it 'should not heal when dead' do
+    @character.damage MAX_HEALTH
+
+    @character.heal MAX_HEALTH
+
+    expect(@character.health).to eq(0)
+    expect(@character.alive?).to be(false)
+  end
+
+
 
 end

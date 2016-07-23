@@ -18,7 +18,7 @@ class Character
   end
 
   def heal(hp)
-    @health += hp
+    @health += hp unless !alive?
   end
 
 end
