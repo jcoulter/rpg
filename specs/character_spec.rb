@@ -24,5 +24,10 @@ describe 'Character' do
     expect(@character.health).to eq(990)
   end
 
+  it 'should die when it gets to 0 health' do
+    @character.damage(1000)
+    expect(@character.alive?).to be(false)
+  end
+
 
 end

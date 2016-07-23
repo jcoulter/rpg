@@ -10,6 +10,9 @@ alias_method :alive?, :alive
 
 def damage(hp)
   @health -= hp
+  if @health == 0
+    @alive = false
+  end
 end
 
 end
