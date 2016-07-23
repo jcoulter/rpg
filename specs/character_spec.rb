@@ -1,6 +1,8 @@
 require 'rspec'
 require_relative '../lib/character'
 
+MAX_HEALTH = Character::MAX_HEALTH
+
 describe 'Character' do
 
   before(:each) do
@@ -8,7 +10,7 @@ describe 'Character' do
   end
 
   it 'should initialize health' do
-    expect(@character.health).to eq(1000)
+    expect(@character.health).to eq(MAX_HEALTH)
   end
 
   it 'should initialize level' do
@@ -20,12 +22,13 @@ describe 'Character' do
   end
 
   it 'should take damage' do
-    @character.damage(10)
-    expect(@character.health).to eq(990)
+    damage = 10
+    @character.damage(damage)
+    expect(@character.health).to eq(MAX_HEALTH - damage)
   end
 
   it 'should die when it gets to 0 health' do
-    @character.damage(1000)
+    @character.damage(MAX_HEALTH)
     expect(@character.alive?).to be(false)
   end
 
